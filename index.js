@@ -107,7 +107,7 @@ let path = draw.path
         L${x8} ${y8}
         Q ${xc1} ${yc1} ${x1} ${y1}
     `)
-    .attr({ stroke: roadTexture, fill: 'transparent', 'stroke-width': longStraightWay.width })
+    .attr({ stroke: 'black', fill: 'transparent', 'stroke-width': longStraightWay.width })
     .center(window.innerWidth / 2, window.innerHeight / 2);
 let length = path.length();
 
