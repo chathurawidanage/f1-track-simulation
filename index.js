@@ -28,7 +28,7 @@ var shortStraightWay = {
     width: trackWidth * widthSCale
 };
 
-var roadTexture = "road.jpg";
+var roadTexture = "road_two.jpg";
 
 var draw = SVG('drawing').size('100%', '100%');
 
@@ -107,7 +107,7 @@ let path = draw.path
         L${x8} ${y8}
         Q ${xc1} ${yc1} ${x1} ${y1}
     `)
-    .attr({ stroke: 'black', fill: 'transparent', 'stroke-width': longStraightWay.width })
+    .attr({ stroke: roadTexture, fill: 'transparent', 'stroke-width': longStraightWay.width })
     .center(window.innerWidth / 2, window.innerHeight / 2);
 let length = path.length();
 
@@ -159,6 +159,7 @@ function addCar(image, animationTime) {
     }).loop(true, false)
 }
 
-addCar('car.png', 15000);
+addCar('car.png', 13000);
+addCar('orange.png', 15000);
 addCar('car_red.png', 20000);
 addCar('blue.png', 18000);
