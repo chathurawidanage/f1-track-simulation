@@ -125,7 +125,12 @@ console.log("Length", length / scale);
 
 function addCar(image, animationTime) {
     var carContainer = draw.group();
-    var car = carContainer.image(image).size(4.8 * carScale, 1.8 * scale * carScale);
+    var car = carContainer.image(image).size(4.8 * carScale, 1.8 * carScale);
+    let boundingBoxMax = Math.sqrt(Math.pow(4.8 * carScale, 2) * 2);
+    carContainer.rect(boundingBoxMax, boundingBoxMax).fill('transparent');
+    car.move(boundingBoxMax / 2 - 4.8 * carScale / 2, boundingBoxMax / 2 - 1.8 * carScale / 2);
+
+    //var car = carContainer.rect(4.8 * carScale, 1.8 * carScale).stroke(1).fill('transparent').attr({ 'stroke-width': 1 })
 
     carContainer.animate(animationTime).during(function (pos, morph, eased) {
         var p = path.pointAt(eased * length)
@@ -155,5 +160,5 @@ function addCar(image, animationTime) {
 }
 
 addCar('car.png', 15000);
-addCar('car_red.png', 25000);
+addCar('car_red.png', 20000);
 addCar('blue.png', 18000);
